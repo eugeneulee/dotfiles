@@ -1,0 +1,66 @@
+# Aliases to commonly used commands
+
+# edit this rc file
+alias rcedit='vim ~/.zshrc && source ~/.zshrc'
+
+# edit hosts file
+alias hostsedit='sudo vim /etc/hosts && dscacheutil -flushcache'
+
+# edit and reload nginx
+alias nginxedit='vim /usr/local/etc/nginx/nginx.conf && sudo nginx -s reload && clear_cache'
+
+# remove ds store files
+alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
+
+# edit vimrc
+alias vimedit='vim ~/.vimrc'
+
+# goto places
+alias cdpwa='cd /workspace/groupon/app'
+alias cdplotd='cd /workspace/groupon/performance/plot_device'
+
+# standard git commands
+alias g='git'
+alias gg='git grep -n'
+alias gf='git fresh'
+alias gu='git fetch --all && git prune && git remote prune origin && git gc'
+alias ga='git add'
+alias gi='git init'
+alias gc='git commit -m'
+alias gac='git commit -am "auto commit"'
+alias gs='git status'
+alias gl='git log --graph --pretty=oneline'
+alias gr='git rebase'
+alias gri='git rebase -i'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gb='git branch'
+alias gco='git checkout'
+alias gpr='git pull --rebase'
+alias gcp='git cherry-pick'
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(green bold)- %an %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
+
+# vagrant commands
+alias v='vagrant'
+alias vu='vagrant up'
+alias vs='vagrant status'
+alias vsh='vagrant ssh'
+alias vr='vagrant reload'
+alias vh='vagrant halt'
+alias vv='cd ~/vagrants/groupon'
+
+# colored output ls w/ details by default
+alias ls='ls -Glao'
+alias l='ls -alF'
+
+# use custom tmux starter
+alias tmux='~/dotfiles/tmux/tmux.sh'
+
+# aliases for copy/paste on os x
+alias p='pbpaste'
+alias c='pbcopy'
+
+alias cdpoint='cd /Users/elee/groupon_src/groupon'
+alias cdgoblin='cd /Users/elee/groupon_src/src.goblin.maven'
+
+alias ppjson='python -mjson.tool'

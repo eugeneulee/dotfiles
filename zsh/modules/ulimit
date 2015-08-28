@@ -1,0 +1,3 @@
+# User limit updates to ensure we don't run out of files during dev
+
+ulimit -n 9999

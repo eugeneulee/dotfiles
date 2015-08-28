@@ -1,0 +1,34 @@
+# Prompt customization settings
+#
+# This module enables some fun things like VCS information and
+# vi mode keybindings on the prompt
+
+# Enable the VCS info module and prompt settings
+autoload -Uz vcs_info
+setopt prompt_subst
+autoload -U promptinit
+promptinit
+
+# Enable vi mode on the prompt
+bindkey -v
+
+# Set our bell
+bell=`tput bel`
+
+# If we're in a directory under version control, make sure we fetch
+# the appropriate VCS information for building our prompt
+precmd () {
+  vcs_info
+  zstyle ':vcs_info:git:*' check-for-changes  true
+  zstyle ':vcs_info:*'     actionformats      "[%s|%b|%a]"
+  zstyle ':vcs_info:*'     actionformats      "%c %u [%s|%b|%a]"
+  zstyle ':vcs_info:*'     formats            "[%s|%b]"
+  zstyle ':vcs_info:git:*' formats            "%c %u [%s|%b]"
+  echo -n "\033]1;$USERNAME@$HOST$bell\033]2;$PWD> - $USERNAME@$HOST ($status)$bell"
+}
+
+# Set our custom prompt formats
+PROMPT='%m %B%3c%(#.#.>)%b '
+PROMPT2="%_> "
+RPROMPT='${vcs_info_msg_0_}'
+

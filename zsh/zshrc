@@ -1,0 +1,15 @@
+# Simple control file that loads additional modules as needed.
+#
+# To enable modules, place them in ~/dotfiles/zsh/modules-available/
+# directory and symlink them into ~/dotfiles/zsh/modules-enabled/
+
+# Load all enabled modules
+for file in ~/dotfiles/zsh/modules/*; do
+  source $file
+done
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
+export MAVEN_OPTS="-Xmx256m"
+
+[[ -s /Users/$USER/.nvm/nvm.sh ]] && . /Users/$USER/.nvm/nvm.sh

@@ -1,0 +1,12 @@
+:LuaInspect	luainspect.txt	/*:LuaInspect*
+:LuaInspectToggle	luainspect.txt	/*:LuaInspectToggle*
+g:loaded_luainspect	luainspect.txt	/*g:loaded_luainspect*
+g:lua_inspect_events	luainspect.txt	/*g:lua_inspect_events*
+g:lua_inspect_internal	luainspect.txt	/*g:lua_inspect_internal*
+g:lua_inspect_warnings	luainspect.txt	/*g:lua_inspect_warnings*
+luainspect-contact	luainspect.txt	/*luainspect-contact*
+luainspect-installation	luainspect.txt	/*luainspect-installation*
+luainspect-license	luainspect.txt	/*luainspect-license*
+luainspect-references	luainspect.txt	/*luainspect-references*
+luainspect-usage	luainspect.txt	/*luainspect-usage*
+luainspect.txt	luainspect.txt	/*luainspect.txt*
