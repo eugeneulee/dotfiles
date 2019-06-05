@@ -8,8 +8,14 @@ for file in ~/dotfiles/zsh/modules/*; do
   source $file
 done
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
 export MAVEN_OPTS="-Xmx256m"
+export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 [[ -s /Users/$USER/.nvm/nvm.sh ]] && . /Users/$USER/.nvm/nvm.sh
+export PATH="$PATH:/usr/local/opt/ncurses/bin"
+export PATH="$PATH:/Users/eugene/Library/Python/3.7/bin"
