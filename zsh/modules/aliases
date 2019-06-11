@@ -15,6 +15,9 @@ alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
 # edit vimrc
 alias vimedit='vim ~/.vimrc'
 
+# ctags stuff
+alias gen_ctags='ctags -R -f .tags'
+
 # standard git commands
 alias g='git'
 alias gg='git grep -n'
@@ -52,11 +55,11 @@ alias l='ls -alF'
 # use custom tmux starter
 alias tmux='~/dotfiles/tmux/tmux.sh'
 
-# go places
-alias cdbc='cd /Users/eugene/src/BlueCrew'
-
 # pretty print
 alias ppjson='python -mjson.tool'
 
 # bluecrew stuff
+alias bc_build_apiv1='docker build . --tag bc-api-v1:latest'
 alias bc_apiv1_start='docker run --name bc-api-v1 --env-file .env --publish 3000:3000 bc-api-v1:latest'
+alias cdbc='cd /Users/eugene/src/BlueCrew'
+

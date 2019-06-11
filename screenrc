@@ -2,6 +2,9 @@
 # All other .screenrc files will source this file to inherit settings.
 # Author: Christian Wills - cwills.sys@gmail.com
 
+# Disable startup message
+startup_message off
+
 # Allow bold colors - necessary for some reason
 attrcolor b ".I"
 
@@ -23,14 +26,38 @@ defscrollback 100000
 # New mail notification
 #backtick 101 30 15 $HOME/bin/mailstatus.sh
 
-hardstatus alwayslastline
 # Very nice tabbed colored hardstatus line
+hardstatus alwayslastline
 hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+
+# enable altscreen: prevents less, vi, etc. from clobbering the screen contents and leaving their gunk behind after exiting
+altscreen on
 
 # change command character from ctrl-a to ctrl-b (emacs users may want this)
 #escape ^Bb
 
 # Hide hardstatus: ctrl-a f
 bind f eval "hardstatus ignore"
+
 # Show hardstatus: ctrl-a F
 bind F eval "hardstatus alwayslastline"
+
+# Open all of the bluecrew app components
+screen -t zsh
+chdir $HOME/src/BlueCrew/api-v2
+screen -t db
+select 2
+chdir $HOME/src/BlueCrew/Server
+screen -t api-v1
+select 2
+stuff "echo 'test all the api-v1 things!!!'^M"
+screen -t api-v1:logs
+select 3
+stuff "echo 'view all the api-v1 logs!!!'^M"
+chdir $HOME/src/BlueCrew/api-v2
+screen -t api-v2
+select 4
+stuff "echo 'test all the api-v2 things!!!'^M"
+screen -t api-v2:logs
+stuff "echo 'view all the api-v2 logs!!!'^M"
+
