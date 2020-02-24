@@ -44,20 +44,11 @@ bind F eval "hardstatus alwayslastline"
 
 # Open all of the bluecrew app components
 screen -t zsh
-chdir $HOME/src/BlueCrew/api-v2
-screen -t db
-select 2
-chdir $HOME/src/BlueCrew/Server
+chdir $HOME/src/BlueCrew/api-v1
 screen -t api-v1
 select 2
-stuff "echo 'test all the api-v1 things!!!'^M"
-screen -t api-v1:logs
-select 3
-stuff "echo 'view all the api-v1 logs!!!'^M"
 chdir $HOME/src/BlueCrew/api-v2
 screen -t api-v2
-select 4
-stuff "echo 'test all the api-v2 things!!!'^M"
-screen -t api-v2:logs
-stuff "echo 'view all the api-v2 logs!!!'^M"
-
+select 2
+chdir $HOME/src/BlueCrew/devops-db
+screen -t db
