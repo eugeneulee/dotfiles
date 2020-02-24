@@ -8,8 +8,32 @@ for file in ~/dotfiles/zsh/modules/*; do
   source $file
 done
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
+SAVEHIST=500
+HISTFILE=~/.zsh_history
+
+# Java
 export MAVEN_OPTS="-Xmx256m"
+export HEAP="-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home"
+export ANDROID_HOME="/Users/eugene/Library/Android/sdk"
+export ANDROID_SDK="/Users/eugene/Library/Android/sdk"
+
+export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+
+# Node
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 [[ -s /Users/$USER/.nvm/nvm.sh ]] && . /Users/$USER/.nvm/nvm.sh
+export PATH="$PATH:/usr/local/opt/ncurses/bin"
+export PATH="$PATH:/Users/eugene/Library/Python/3.7/bin"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="/Users/eugene/Library/Python/3.7/bin:$PATH"
+export PATH="$PATH:./node_modules/.bin"
+export NVM_DIR="$HOME/.nvm"
+
+export CIRCLECI_API_KEY="1c75301797cbe00051acca61726fff7f5db585b2"
+export TESTRAIL_API_KEY="ISUl/oDWOJ3XLulwFvTy-2oO2lYsJG0MpvNdU1z8s"
