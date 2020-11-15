@@ -66,9 +66,7 @@ alias tmux='~/dotfiles/tmux/tmux.sh'
 # pretty print stuff
 alias pp_json='python -m json.tool'
 
-# bluecrew stuff
-alias bc_build_apiv1='docker build . --tag bc-api-v1:latest'
-alias bc_apiv1_start='docker run --name bc-api-v1 --env-file .env --publish 3000:3000 bc-api-v1:latest'
-alias cdbc='cd /Users/eugene/src/Bluecrew'
-alias bc_db_docker_stop="docker ps |grep mysql | awk '{print $1}' | xargs docker stop"
+# home network
+alias pihole='ssh pi@pihole.local'
+alias retropie='ssh pi@retropie.local'
 
