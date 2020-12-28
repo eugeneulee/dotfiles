@@ -44,11 +44,9 @@ bind F eval "hardstatus alwayslastline"
 
 # Open all of the bluecrew app components
 screen -t zsh
-chdir $HOME/src/BlueCrew/api-v1
-screen -t api-v1
+chdir $HOME/src/savvymoney/api-tests
+screen -t api-tests
 select 2
-chdir $HOME/src/BlueCrew/api-v2
-screen -t api-v2
+chdir $HOME/src/savvymoney/ui-tests
+screen -t ui-tests
 select 2
-chdir $HOME/src/BlueCrew/devops-db
-screen -t db

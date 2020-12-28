@@ -3,6 +3,8 @@
 # To enable modules, place them in ~/dotfiles/zsh/modules-available/
 # directory and symlink them into ~/dotfiles/zsh/modules-enabled/
 
+set bell-style visible
+
 # Load all enabled modules
 for file in ~/dotfiles/zsh/modules/*; do
   source $file
@@ -37,3 +39,14 @@ export NVM_DIR="$HOME/.nvm"
 
 export CIRCLECI_API_KEY="1c75301797cbe00051acca61726fff7f5db585b2"
 export TESTRAIL_API_KEY="ISUl/oDWOJ3XLulwFvTy-2oO2lYsJG0MpvNdU1z8s"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/eugenelee/.sdkman"
+[[ -s "/Users/eugenelee/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/eugenelee/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+
