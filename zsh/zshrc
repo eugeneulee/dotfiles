@@ -20,11 +20,11 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home
 export ANDROID_HOME="/Users/eugene/Library/Android/sdk"
 export ANDROID_SDK="/Users/eugene/Library/Android/sdk"
 
-export LDFLAGS="-L/usr/local/opt/ncurses/lib"
-export CPPFLAGS="-I/usr/local/opt/ncurses/include"
+#export LDFLAGS="-L/usr/local/opt/ncurses/lib"
+#export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 
-export LDFLAGS="-L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+export LDFLAGS="-L/usr/local/opt/ncurses/lib -L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/icu4c/include"
 
 # Node
 export NVM_DIR="$HOME/.nvm"
@@ -56,7 +56,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-=======
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/eugenelee/.sdkman"
+export SDKMAN_DIR="/Users/elee/.sdkman"
 [[ -s "/Users/elee/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/elee/.sdkman/bin/sdkman-init.sh"

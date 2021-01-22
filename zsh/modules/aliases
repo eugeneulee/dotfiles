@@ -64,4 +64,4 @@ alias pihole='ssh pi@pihole.local'
 alias retropie='ssh pi@retropie.local'
 
 # savvymoney stuff
-alias cdsm='cd /Users/eugenelee/src/savvymoney'
+alias cdsm='cd /Users/elee/src/savvymoney'
