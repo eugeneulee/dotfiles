@@ -13,12 +13,15 @@ done
 SAVEHIST=500
 HISTFILE=~/.zsh_history
 
+# AWS
+export AWS_PROFILE=elee
+
 # Java
-export MAVEN_OPTS="-Xmx256m"
-export HEAP="-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home"
-export ANDROID_HOME="/Users/eugene/Library/Android/sdk"
-export ANDROID_SDK="/Users/eugene/Library/Android/sdk"
+export MAVEN_OPTS="-Xmx1024m"
+export HEAP="-Xms2g -Xmx2g -XX:MaxMetaspaceSize=1024m"
+export JAVA_HOME="/Users/elee/.sdkman/candidates/java/current/jre"
+export ANDROID_HOME="/Users/elee/Library/Android/sdk"
+export ANDROID_SDK="/Users/elee/Library/Android/sdk"
 
 #export LDFLAGS="-L/usr/local/opt/ncurses/lib"
 #export CPPFLAGS="-I/usr/local/opt/ncurses/include"
@@ -36,11 +39,15 @@ export PATH="$PATH:/usr/local/opt/ncurses/bin"
 export PATH="$PATH:/Users/eugene/Library/Python/3.7/bin"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 export PATH="$PATH:$JAVA_HOME/bin"
-export PATH="/Users/eugene/Library/Python/3.7/bin:$PATH"
+export PATH="/Users/elee/Library/Python/3.7/bin:$PATH"
 export PATH="$PATH:./node_modules/.bin"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt:$PATH"
 export NVM_DIR="$HOME/.nvm"
+
+# Ruby
+eval "$(rbenv init - zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

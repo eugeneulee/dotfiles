@@ -1,0 +1,4 @@
+#!/bin/bash
+
+java -jar /Applications/SQLWorkbenchJ.app/Contents/Java/sqlworkbench.jar </dev/null &>/dev/null &
+

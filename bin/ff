@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Remember, dummy.... $0 represents the command name
+printf "$0 $1 $2"
+
+if [[ -z "$2" ]]
+then
+    printf "\n$1"
+    printf "\n$2"
+    find -f "$2" "$1" -print
+else
+    # TODO: Fix.  Trying to assume that a ./ path can be assumed is causing issues
+    printf "\n$1"
+    find -f '.' "$1" -print
+fi
+# Old
+
+#if [[ -z "$2" ]]
+#then
+#    printf "\n$1"
+#    printf "\n$2"
+#    find -f "$2" -name "$1" -print
+#else
+#    # TODO: Fix.  Trying to assume that a ./ path can be assumed is causing issues
+#    printf "\n$1"
+#    find -f '.' -name "$1" -print
+#fi

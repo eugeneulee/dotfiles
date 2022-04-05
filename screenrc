@@ -47,6 +47,6 @@ screen -t zsh
 chdir $HOME/src/savvymoney/api-tests
 screen -t api-tests
 select 2
-chdir $HOME/src/savvymoney/ui-tests
+chdir $HOME/src/savvymoney/savvymoney-automation-tests
 screen -t ui-tests
 select 2
