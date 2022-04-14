@@ -15,6 +15,9 @@ alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
 # edit vimrc
 alias vimedit='vim ~/.vimrc'
 
+# highlight matches with grep
+alias grep='grep --color=always'
+
 # ctags stuff
 alias gen_ctags='ctags -R -f .tags'
 
