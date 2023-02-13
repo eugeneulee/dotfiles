@@ -23,6 +23,7 @@ alias gen_ctags='ctags -R -f .tags'
 
 # standard git commands
 alias g='git'
+alias gs='git status'
 alias gg='git grep -n'
 alias gf='git fresh'
 alias gu='git fetch --all && git prune && git remote prune origin && git gc'
@@ -67,4 +68,5 @@ alias pihole='ssh pi@pihole.local'
 alias retropie='ssh pi@retropie.local'
 
 # savvymoney stuff
-alias cdsm='cd /Users/elee/src/savvymoney'
+alias smc='cd /Users/elee/src/sm-core'
+alias smp='cd /Users/elee/src/sm-prototype'

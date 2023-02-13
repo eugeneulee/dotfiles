@@ -20,6 +20,7 @@ export AWS_PROFILE=elee
 export MAVEN_OPTS="-Xmx1024m"
 export HEAP="-Xms2g -Xmx2g -XX:MaxMetaspaceSize=1024m"
 export JAVA_HOME="/Users/elee/.sdkman/candidates/java/current/jre"
+export PATH_OF_JAVA_KEYSTORE="/Users/elee/.sdkman/candidates/java/current/lib/security/cacerts"
 export ANDROID_HOME="/Users/elee/Library/Android/sdk"
 export ANDROID_SDK="/Users/elee/Library/Android/sdk"
 
@@ -27,7 +28,7 @@ export ANDROID_SDK="/Users/elee/Library/Android/sdk"
 #export CPPFLAGS="-I/usr/local/opt/ncurses/include"
 
 export LDFLAGS="-L/usr/local/opt/ncurses/lib -L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/icu4c/include"
+export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/icu4c/include -I/usr/local/opt/openjdk@17/include"
 
 # Node
 export NVM_DIR="$HOME/.nvm"
@@ -45,6 +46,8 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt:$PATH"
 export NVM_DIR="$HOME/.nvm"
+export BROWSERSTACK_USERNAME="eugenelee6"
+export BROWSERSTACK_ACCESS_KEY="2FRcrSVzRw3psubSzJdn"
 
 # Ruby
 eval "$(rbenv init - zsh)"
@@ -63,7 +66,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/elee/.sdkman"
-[[ -s "/Users/elee/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/elee/.sdkman/bin/sdkman-init.sh"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+export AWS_CA_BUNDLE="${HOME}/.config/.cloudflare/Cloudflare_CA.pem"
+export NODE_EXTRA_CA_CERTS="${HOME}/.config/.cloudflare/Cloudflare_CA.pem"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export NODE_EXTRA_CA_CERTS="${HOME}/.config/.cloudflare/Cloudflare_CA.pem"
