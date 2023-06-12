@@ -30,23 +30,19 @@ export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/icu4c/include
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-
 [[ -s /Users/$USER/.nvm/nvm.sh ]] && . /Users/$USER/.nvm/nvm.sh
+
+
 export PATH="$PATH:/usr/local/opt/ncurses/bin"
 export PATH="$PATH:/Users/elee/Library/Python/3.7/bin"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 export PATH="$PATH:$JAVA_HOME/bin"
-export PATH="/Users/elee/Library/Python/3.7/bin:$PATH"
 export PATH="$PATH:./node_modules/.bin"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt:$PATH"
 export NVM_DIR="$HOME/.nvm"
-export BROWSERSTACK_USERNAME="eugenelee6"
-export BROWSERSTACK_ACCESS_KEY="2FRcrSVzRw3psubSzJdn"
 
 # Ruby
-eval "$(rbenv init - zsh)"
+#eval "$(rbenv init - zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -62,14 +58,11 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-<<<<<<< Updated upstream
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
-export AWS_CA_BUNDLE="${HOME}/.config/.cloudflare/Cloudflare_CA.pem"
-export NODE_EXTRA_CA_CERTS="${HOME}/.config/.cloudflare/Cloudflare_CA.pem"
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export NODE_EXTRA_CA_CERTS="${HOME}/.config/.cloudflare/Cloudflare_CA.pem"
-=======
+#eval "$(jenv init -)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/elee/.sdkman"
 [[ -s "/Users/elee/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/elee/.sdkman/bin/sdkman-init.sh"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
