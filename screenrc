@@ -42,11 +42,11 @@ bind f eval "hardstatus ignore"
 # Show hardstatus: ctrl-a F
 bind F eval "hardstatus alwayslastline"
 
-# Open all of the bluecrew app components
+# Open src folders
 screen -t zsh
-chdir $HOME/src/savvymoney/api-tests
-screen -t api-tests
+chdir $HOME/src/eugeneulee
+screen -t src
 select 2
-chdir $HOME/src/savvymoney/savvymoney-automation-tests
-screen -t ui-tests
+chdir $HOME/src/eugeneulee
+screen -t src
 select 2
