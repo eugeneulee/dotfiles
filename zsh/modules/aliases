@@ -61,7 +61,7 @@ alias local_mysql='mysql -uroot -P3305 -p -h 127.0.0.1'
 alias tmux='~/dotfiles/tmux/tmux.sh'
 
 # pretty print stuff
-alias pp_json='python -m json.tool'
+alias pp_json='python3 -m json.tool'
 
 # home network
 alias pihole='ssh pi@pihole.local'

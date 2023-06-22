@@ -24,17 +24,17 @@ export ANDROID_HOME="/Users/elee/Library/Android/sdk"
 export ANDROID_SDK="/Users/elee/Library/Android/sdk"
 
 export LDFLAGS="-L/usr/local/opt/ncurses/lib -L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/icu4c/include -I/usr/local/opt/openjdk@17/include"
+export CPPFLAGS="-I/usr/local/opt/ncurses/include -I/usr/local/opt/icu4c/include"
 
 # Node
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 [[ -s /Users/$USER/.nvm/nvm.sh ]] && . /Users/$USER/.nvm/nvm.sh
 
 
 export PATH="$PATH:/usr/local/opt/ncurses/bin"
-export PATH="$PATH:/Users/elee/Library/Python/3.7/bin"
+export PATH="$PATH:/opt/homebrew/Cellar/python@3.11/3.11.4"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:./node_modules/.bin"

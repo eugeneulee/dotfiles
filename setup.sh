@@ -41,6 +41,9 @@ function write-dot-files() {
     # Tmux configuration
     replace-dotfile .tmux.conf dotfiles/tmux/tmux.conf
 
+    # Screen configuration
+    replace-dotfile .screenrc dotfiles/screenrc
+
     # dotjs - see http://defunkt.io/dotjs/
     replace-dotfile .js dotfiles/js
 
@@ -56,12 +59,24 @@ function write-dot-files() {
 
 }
 
+function install-homebrew-packages() {
+
+  {
+
+    echo Installing packages in SRC_ROOT/brew/pacakges
+    brew install -v `tr '\n' ' '  < brew/packages`
+
+  }
+
+}
+
 # Make sure we want to continue...
 echo "WARNING! This script will destroy any existing dotfiles in your"
 read -r -p "home folder; are you sure you want to continue? [y/n] " response
 case $response in
     [yY][eE][sS]|[yY])
         write-dot-files
+        install-homebrew-packages
         ;;
 
     *)
