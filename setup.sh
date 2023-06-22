@@ -83,8 +83,8 @@ echo "                .screenrc"
 read -r -p "Are you sure you want to continue? [y/n] " dotfile_response
 case $dotfile_response in
     [yY][eE][sS]|[yY])
-        write-dot-files
         install-homebrew-packages
+        write-dot-files
         ;;
 
     *)

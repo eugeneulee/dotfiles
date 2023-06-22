@@ -56,17 +56,13 @@ alias whos_listening='sudo lsof -iTCP -sTCP:LISTEN -n -P'
 alias local_mysql='mysql -uroot -P3305 -p -h 127.0.0.1'
 
 # tmux
-#alias tm='tmux new -s $0'
-#alias ta='tmux attach -t $0'
-alias tmux='~/dotfiles/tmux/tmux.sh'
+alias tm='tmux new -s $0'
+alias ta='tmux attach -t $0'
 
-# pretty print stuff
+# json pretty print
 alias pp_json='python3 -m json.tool'
 
 # home network
-alias pihole='ssh pi@pihole.local'
-alias retropie='ssh pi@retropie.local'
+alias rpi3='ssh pi@rpi3.local'
+alias rpi4='ssh pi@rpi4.local'
 
-# savvymoney stuff
-alias smc='cd /Users/elee/src/sm-core'
-alias smp='cd /Users/elee/src/sm-prototype'

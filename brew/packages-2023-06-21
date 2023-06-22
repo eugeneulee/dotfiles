@@ -1,3 +1,4 @@
+autoconf
 berkeley-db
 brotli
 c-ares
@@ -33,6 +34,7 @@ little-cms2
 lua
 lz4
 lzo
+m4
 maven
 mpdecimal
 ncurses
@@ -42,10 +44,13 @@ openssl@1.1
 pcre2
 perl
 pixman
+pkg-config
 pygments
 python@3.11
+rbenv
 readline
 ruby
+ruby-build
 sqlite
 tree
 vim
