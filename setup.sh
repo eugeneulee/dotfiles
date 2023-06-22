@@ -3,51 +3,35 @@
 # Create symlinks to dotfiles provided by this repo
 #
 # Run at your own risk; this will delete existing dotfiles
-# in your home folder. There are no backups.
+# in your home folder of the same name. There are no backups made.
 
-# Break on errors
+# break on errors
 set -e
 
-# Actual method
 function write-dot-files() {
 
   # Start a subshell so we don't leave the current directory
-  # the script is started from
   (
 
-    echo Creating symbolic links to dotfile assets...
-
-    # Clear our output
+    echo Creating symbolic links to dotfiles in version control
     OUTPUT=''
-
-    # Go home
     cd ~
 
-    # Function to let us quickly replace files with a symbolic link
+    # create symlinks
     function replace-dotfile() {
       [ -d $1 -o -e $1 -o -h $1 ] && rm -rf $1
       ln -s $2 $1
       OUTPUT="${OUTPUT}~/$1 -> ~/$2|"
     }
 
-    # Set up vim
+    # setup vim, zsh, tmux, and screen
     replace-dotfile .vim dotfiles/vim
     replace-dotfile .vimrc dotfiles/vim/vimrc
     replace-dotfile .gvimrc dotfiles/vim/gvimrc
-
-    # Set up zshrc
     replace-dotfile .zshrc dotfiles/zsh/zshrc
-
-    # Tmux configuration
     replace-dotfile .tmux.conf dotfiles/tmux/tmux.conf
-
-    # Screen configuration
     replace-dotfile .screenrc dotfiles/screenrc
 
-    # dotjs - see http://defunkt.io/dotjs/
-    replace-dotfile .js dotfiles/js
-
-    # Show the results of our operation
     echo Updated the following files:
     echo $OUTPUT | tr "|" "\n" | column -t -s ' '
     echo
@@ -61,19 +45,43 @@ function write-dot-files() {
 
 function install-homebrew-packages() {
 
-  {
+  # Check if brew is installed.  If not, install it
+  if command -v brew >/dev/null 2>&1; then
+    echo Homebrew installed. Will attempt to install packages
+  else
+    echo Homebrew is not installed. Attempting to install from: https://brew.sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
 
-    echo Installing packages in SRC_ROOT/brew/pacakges
-    brew install -v `tr '\n' ' '  < brew/packages`
-
-  }
-
+  # Install packages from dotfiles/brew/packages
+  if [ -f "brew/packages" ]; then
+    packages=$(tr '\n' ' ' < "brew/packages")
+    echo Package list: $packages
+    read -r -p "Are you sure you want to install all the packages listed above?" package_response
+		case $package_response in
+        [yY][eE][sS]|[yY])
+        brew install -v $packages
+        ;;
+      *)
+    echo -e "\n...aborted"
+        exit 1
+        ;;
+	  esac
+  else
+    echo No package list found in brew/packages
+  fi
 }
 
 # Make sure we want to continue...
-echo "WARNING! This script will destroy any existing dotfiles in your"
-read -r -p "home folder; are you sure you want to continue? [y/n] " response
-case $response in
+echo This script will permanently delete dotfiles in your home dir
+echo It will delete: .vim/
+echo "                .vimrc"
+echo "                .gvimrc"
+echo "                .zshrc"
+echo "                .tmux.conf"
+echo "                .screenrc"
+read -r -p "Are you sure you want to continue? [y/n] " dotfile_response
+case $dotfile_response in
     [yY][eE][sS]|[yY])
         write-dot-files
         install-homebrew-packages
