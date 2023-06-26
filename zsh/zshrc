@@ -13,6 +13,9 @@ done
 SAVEHIST=500
 HISTFILE=~/.zsh_history
 
+# Colorize the ls output https://geoff.greer.fm/lscolors/
+export LSCOLORS="gxfxcxdxbxegedabagacad"
+
 # AWS
 export AWS_PROFILE=elee
 
