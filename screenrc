@@ -44,9 +44,9 @@ bind F eval "hardstatus alwayslastline"
 
 # Open src folders
 screen -t zsh
-chdir $HOME/src/eugeneulee
-screen -t src
+chdir $HOME/src/icd/ir/ui-tests
+screen -t ui-tests
 select 2
-chdir $HOME/src/eugeneulee
-screen -t src
+chdir $HOME/src/icd/ir/frp-automation
+screen -t frp-automation
 select 2

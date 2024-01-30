@@ -66,3 +66,6 @@ alias pp_json='python3 -m json.tool'
 alias rpi3='ssh pi@rpi3.local'
 alias rpi4='ssh pi@rpi4.local'
 
+# ICD stuff
+alias cdicd='cd ~/src/icd'
+

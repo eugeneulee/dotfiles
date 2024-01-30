@@ -43,6 +43,18 @@ function write-dot-files() {
 
 }
 
+function install-sdkman() {
+
+  # Check if sdkman is installed.  If not, install it
+  if command -v brew > /dev/null 2>&1; then
+    echo sdkman installed.  Exiting.
+  else
+    echo Installing sdkman from https://sdkman.io
+    curl -s "https://get.sdkman.io" | bash
+  fi
+}
+
+
 function install-homebrew-packages() {
 
   # Check if brew is installed.  If not, install it
